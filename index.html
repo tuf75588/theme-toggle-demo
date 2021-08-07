@@ -1,4 +1,29 @@
 <body>
+ <head>
+  <style>
+   body {
+ margin: 0;
+ padding:0;
+
+}
+
+.content-area {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.header {
+ background: navy;
+ min-height: 200px;
+}
+
+.dark {
+ background: #000;
+ color: deeppink;
+}
+  </style>
+ </head>
  <header class="header">
    
   </header>
@@ -7,4 +32,22 @@
   <p>Your current theme is <span id="span">theme</span></p>
  </div>
   <button class="toggle">toggle theme</button>
+ <script>
+  const contentDiv = document.querySelector('.content-area');
+const div = document.createElement('div');
+const btn = document.querySelector('.toggle');
+let darkTheme = false;
+span.textContent = 'light'
+
+
+btn.addEventListener('click', () => {
+  div.textContent = '';
+  darkTheme = !darkTheme;
+ div.setAttribute('class', `${darkTheme ? 'dark' : 'light'}`);
+ span.textContent = `${darkTheme ? 'dark' : 'light'}`
+ contentDiv.appendChild(div);
+})
+  
+
+ </script>
 </body>
